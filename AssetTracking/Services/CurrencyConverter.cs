@@ -6,6 +6,7 @@ namespace AssetTracking.Services
     {
         public static decimal CurrencyConvert(Product product)
         {
+            if(product==null) return 0;
             
             if (product.Office.Currency.Equals("Euro"))
             {
@@ -17,7 +18,7 @@ namespace AssetTracking.Services
             }
             else if (product.Office.Currency.Equals("Yen"))
             {
-                return ((decimal)product.Price) / 0.006M;
+                return ((decimal)product.Price) * 0.006M;
             }
             else
             {

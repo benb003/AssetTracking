@@ -47,9 +47,9 @@
                         <tr>
                         <td>@product.Brand</td>
                         <td>@product.Name</td>
-                        <td>@product.Price</td>
+                        <td>@product.Price.ToString("N")</td>
                         <td>@office.Currency</td>
-                        <td>@CurrencyConverter.CurrencyConvert(product).ToString("F")</td>
+                        <td>@CurrencyConverter.CurrencyConvert(product).ToString("N")</td>
                         <td>@product.PurchaseDate.ToShortDateString()</td>
                         <td>@office.Location</td>
                         <td>
