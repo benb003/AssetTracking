@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Product>
+
+<div class="container p-3 text-white">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary text-light">Dead Product List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Product" asp-action="Index" class="btn btn-primary">
+                Back To Product List
+            </a>            
+        </div>
+
+    </div>
+    <br /><br />
+
+    <table class="table table-bordered table table-striped">
+        <thead>
+            <tr>
+                <th>Product Brand</th>
+                <th>Product Name</th>
+                <th>Product Price</th>                
+                <th>Purchase Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {               
+                    <tr>
+                        <td>@product.Brand</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>@product.PurchaseDate.ToShortDateString()</td>                        
+                    </tr>                
+            }
+        </tbody>
+    </table>
+</div>

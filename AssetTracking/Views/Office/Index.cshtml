@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Office>
+
+<div class="container p-3 text-white">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary text-light">Office List</h2>
+        </div>
+      
+    </div>
+    <br/><br/>
+
+    <table class="table table-bordered table table-striped">
+        <thead>
+        <tr>
+            <th>Office Location</th>
+            <th>Currency</th>            
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var office in Model)
+        {
+            <tr>
+                <td>@office.Location</td>
+                <td>@office.Currency</td>            
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
